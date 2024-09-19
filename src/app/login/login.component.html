@@ -1,0 +1,33 @@
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 to-teal-500">
+
+  <div class="bg-gray-100 p-10 rounded-3xl shadow-lg w-full max-w-md">
+    <img src="https://angular.io/assets/images/logos/angular/angular.png" alt="Angular Logo" class="mx-auto mb-4 w-32">
+    <br>
+    <h2 class="text-4xl font-extrabold mb-2 text-center text-gray-800">Iniciar Sesión</h2>
+    <p class="text-lg font-semibold mb-6 text-center text-gray-500">Bienvenido</p>
+
+    <form (ngSubmit)="onSubmit()">
+      
+      <div class="mb-5">
+        <label class="block mb-2 text-sm font-medium text-gray-700" for="email">Correo Electrónico</label>
+        <input type="email" id="email" [(ngModel)]="email" name="email" 
+               class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent" 
+               placeholder="Ingresa tu correo" required>
+      </div>
+      
+      <div class="mb-6">
+        <label class="block mb-2 text-sm font-medium text-gray-700" for="password">Contraseña</label>
+        <input type="password" id="password" [(ngModel)]="password" name="password" 
+               class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent" 
+               placeholder="Ingresa tu contraseña" required>
+      </div>
+
+      <button type="submit" 
+              class="w-full bg-gradient-to-r from-green-500 to-teal-500 text-white py-3 rounded-lg font-semibold shadow-lg hover:bg-gradient-to-r hover:from-green-600 hover:to-teal-600 transition-all duration-300 ease-in-out">
+        Iniciar Sesión
+      </button>
+    </form>
+
+    <p *ngIf="errorMessage" class="text-red-600 text-sm mt-4 text-center">{{ errorMessage }}</p>
+  </div>
+</div>
